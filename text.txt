@@ -1,0 +1,56 @@
+SELECT JSON_OBJECT( 'name', c.name, 'rarity', c.rarity, 'element', c.element, 'skills', CONCAT('[', GROUP_CONCAT( JSON_OBJECT( 'skillId', s.skillId, 'name', s.name, 'type', s.type, 'desc', s.description, 'tags', s.tags ) SEPARATOR ','), ']' ), 'energyUltimate', c.energyUltimate ) AS json_data FROM `character` c where `id` = 1 JOIN skill s ON c.id = s.characterId GROUP BY c.id;
+
+
+
+  
+               
+               SET @characterId = LAST_INSERT_ID();
+                    
+                    
+                        "name":"Gepard"
+                        "rarity": "5",
+                        "element": "Ice",
+                        "skills": [
+                            {
+                                "skillId": "1",
+                                "name": "Fist of Conviction",
+                                "type": "Basic",
+                               "desc" : "Deals Ice DMG equal to 50/100/110% of Gepard's ATK to a single enemy."
+                                "tags": "Single Target",
+                    
+                            },
+                            {
+                                "skillId": "2",
+                                "name": "Intimidating Strike",
+                                "type": "Skill",
+                               "desc" :"Deals Ice DMG equal to 100/200/220% of Gepard's ATK to a single enemy, with a 65% base chance to Freeze that enemy for 1 turn(s). While Frozen, the enemy cannot take action and will take Ice DoT equal to 30/60/66% of Gepard's ATK each turn."
+                                "tags": "Impair",
+                              
+                            },
+                            {
+                                "skillId": "3",
+                                "name": "Enduring Bulwark,
+                                "type": "Ultimate",
+                                 "desc" :"Apply a Shield to all allies, absorbing DMG equal to 30/45/48% of Gepard's DEF plus 150/600/668 for 3 turn(s)."
+                                "tags": "Defense",
+                              
+                            },
+                            {
+                                "skillId": "4",
+                                "name": "Unyielding Will",
+                                "type": "Talent",
+                                "desc" :"When struck with a killing blow, instead of becoming incapacitated, Gepard's HP immediately restores 25/50/55% of his Max HP. This effect can only trigger once per battle."
+                                "tags": "Restore",
+                          
+                            },
+                            {
+                                "skillId": "5",
+                                "name": "Comradery",
+                                "type": "Technique",  
+                                "desc" :"After using Gepard's Technique, when the next battle begins, applies a shield to all allies, absorbing DMG equal to 24% of Gepard's DEF plus 150 for 2 turn(s)."
+                                "tags": "Defense",
+                            }
+                        ],
+                      
+                        "energyUltimate": "100",
+                       
