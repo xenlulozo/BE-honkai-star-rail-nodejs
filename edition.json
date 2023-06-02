@@ -1,0 +1,27 @@
+{
+  "eidolonId": 1,
+  "upgrade1Name": "A Tall Figure",
+  "upgrade1Desc": {
+    "raw": "Using Skill will not remove Mark of Counter on the enemy."
+  },
+  "upgrade2Name": "A Tight Embrace",
+  "upgrade2Desc": {
+    "raw": "After using the Ultimate, ATK increases by 30% for 2 turn(s)."
+  },
+  "upgrade3Name": "Cold Steel Armor",
+  "upgrade3Desc": {
+    "raw": "Skill Lv. +2, up to a maximum of Lv. 15. Basic ATK Lv. +1, up to a maximum of Lv. 10."
+  },
+  "upgrade4Name": "Family's Warmth",
+  "upgrade4Desc": {
+    "raw": "After Clara is hit, the DMG taken by Clara is reduced by 30%. This effect lasts until the start of her next turn."
+  },
+  "upgrade5Name": "A Small Promise",
+  "upgrade5Desc": {
+    "raw": "Ultimate Lv. +2, up to a maximum of Lv. 15. Talent Lv. +2, up to a maximum of Lv. 15."
+  },
+  "upgrade6Name": "Long Company",
+  "upgrade6Desc": {
+    "raw": "After other allies are hit, Svarog also has a 50% fixed chance to trigger a Counter on the attacker and mark them with a Mark of Counter. When using Clara's Ultimate, the number of Enhanced Counters increases by 1."
+  }
+}

@@ -34,6 +34,9 @@ configViewEngine(app);
 // init all web routes
 initWebRoutes(app);
 
+//deployvvvg
+app.use(express.static(__dirname + "/build"));
+
 let port = process.env.PORT || 3333;
 app.listen(port, () =>
   console.log(`Building a login system with NodeJS is running on port ${port}!`)
