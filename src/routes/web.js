@@ -29,7 +29,7 @@ let initWebRoutes = (app) => {
   });
   router.get("/list", async (req, res) => {
     const [row, fields] = await pool.execute(
-      "SELECT CONCAT('[', GROUP_CONCAT(json_data SEPARATOR ','), ']') AS json_array FROM ( SELECT JSON_OBJECT( 'id', character.id, 'name', character.name, 'element', character.element, 'path' ,character.path  ) AS json_data FROM hsr.character ) AS subquery;"
+      "SELECT CONCAT('[', GROUP_CONCAT(json_data SEPARATOR ','), ']') AS json_array FROM ( SELECT JSON_OBJECT( 'id', character.id, 'name', character.name, 'element', character.element, 'path' ,character.path  ) AS json_data FROM br4y9pucoxzpjywgd7jb.character ) AS subquery;"
     );
     // return res.render("hse.ejs", { data: row });
     return res.send(JSON.stringify(row));
@@ -37,7 +37,7 @@ let initWebRoutes = (app) => {
   });
   router.get("/test", async (req, res) => {
     const [row, fields] = await pool.execute(
-      "SELECT CONCAT('[', GROUP_CONCAT(json_data SEPARATOR ','), ']') AS json_array FROM ( SELECT JSON_OBJECT( 'id', character.id, 'name', character.name ) AS json_data FROM hsr.character ) AS subquery;"
+      "SELECT CONCAT('[', GROUP_CONCAT(json_data SEPARATOR ','), ']') AS json_array FROM ( SELECT JSON_OBJECT( 'id', character.id, 'name', character.name ) AS json_data FROM br4y9pucoxzpjywgd7jb.character ) AS subquery;"
     );
     return res.json(row);
   });
@@ -64,13 +64,13 @@ let initWebRoutes = (app) => {
 
   router.get("/element", async (req, res) => {
     const [row, fields] = await pool.execute(
-      "SELECT CONCAT('[', GROUP_CONCAT(json_data SEPARATOR ','), ']') AS json_array FROM ( SELECT JSON_OBJECT( 'element', element.name) AS json_data FROM hsr.element ) AS subquery;"
+      "SELECT CONCAT('[', GROUP_CONCAT(json_data SEPARATOR ','), ']') AS json_array FROM ( SELECT JSON_OBJECT( 'element', element.name) AS json_data FROM br4y9pucoxzpjywgd7jb.element ) AS subquery;"
     );
     return res.json(row);
   });
   router.get("/path", async (req, res) => {
     const [row, fields] = await pool.execute(
-      "SELECT CONCAT('[', GROUP_CONCAT(json_data SEPARATOR ','), ']') AS json_array FROM ( SELECT JSON_OBJECT( 'path', path.name) AS json_data FROM hsr.path ) AS subquery;"
+      "SELECT CONCAT('[', GROUP_CONCAT(json_data SEPARATOR ','), ']') AS json_array FROM ( SELECT JSON_OBJECT( 'path', path.name) AS json_data FROM br4y9pucoxzpjywgd7jb.path ) AS subquery;"
     );
     return res.json(row);
   });
