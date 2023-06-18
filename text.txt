@@ -2,7 +2,9 @@ SELECT JSON_OBJECT( 'name', c.name, 'rarity', c.rarity, 'element', c.element, 's
 
 
 
-  
+    "engines": {
+    "node": ">=14 <15"
+  }
                
                SET @characterId = LAST_INSERT_ID();
                     
