@@ -10,21 +10,21 @@ var cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://fe-honkai-star-rail-react.vercel.app/",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
 app.options(
   "*",
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://fe-honkai-star-rail-react.vercel.app/",
     credentials: true,
   })
 );
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://fe-honkai-star-rail-react.vercel.app/",
     credentials: true,
   })
 );
