@@ -8,7 +8,8 @@ const connectionUri = process.env.DB_CONNECTION_URI;
 //   user: process.env.DB_USERNAME,
 //   password: process.env.DB_PASSWORD,
 //   database: process.env.DB_NAME,
-// });
+// });y
+
 const pool = mysql.createPool(connectionUri);
 
 export default pool;
