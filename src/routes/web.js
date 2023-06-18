@@ -41,6 +41,27 @@ let initWebRoutes = (app) => {
     );
     return res.json(row);
   });
+  router.get("/lightcore", async (req, res) => {
+    const { id } = req.params;
+    const [row, fields] = await pool.execute(
+      `SELECT l.id, l.name, l.element, l.description, s.HP, s.ATK, s.DEF FROM lightcore l  INNER JOIN \`light-core-stat\` s ON l.id = s.id;`
+    );
+
+    return res.send(JSON.stringify(row));
+  });
+  router.get("/relic", async (req, res) => {
+    const [row, fields] = await pool.execute(
+      "  SELECT * FROM `relics` WHERE 1"
+    );
+    return res.json(row);
+  });
+  router.get("/characterstat", async (req, res) => {
+    const [row, fields] = await pool.execute(
+      " SELECT c.`id`, `name`, `rarity`, `element`, `energyUltimate`, `path`, cs.HP, cs.ATK,cs.DEF,cs.Speed FROM `character` c INNER JOIN characterstat cs on c.id = cs.id  "
+    );
+    return res.json(row);
+  });
+
   router.get("/element", async (req, res) => {
     const [row, fields] = await pool.execute(
       "SELECT CONCAT('[', GROUP_CONCAT(json_data SEPARATOR ','), ']') AS json_array FROM ( SELECT JSON_OBJECT( 'element', element.name) AS json_data FROM hsr.element ) AS subquery;"

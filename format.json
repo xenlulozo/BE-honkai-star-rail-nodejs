@@ -1,0 +1,8 @@
+{
+  "name": "Diagnostic Kick",
+  "phone": "Single Target",
+  "desc": "Deals Lightning DMG equal to 50/100/110% of Bailu's ATK to a single enemy.",
+  "type": "Basic",
+  "tags": "Single Target",
+  "skillld": "1"
+}
