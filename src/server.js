@@ -10,24 +10,28 @@ var cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: "https://fe-honkai-star-rail-react.vercel.app/",
+  origin: "https://fe-honkai-star-rail-react.vercel.app",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
 app.options(
   "*",
   cors({
-    origin: "https://fe-honkai-star-rail-react.vercel.app/",
+    origin: "https://fe-honkai-star-rail-react.vercel.app",
     credentials: true,
   })
 );
 
 app.use(
   cors({
-    origin: "https://fe-honkai-star-rail-react.vercel.app/",
+    origin: "https://fe-honkai-star-rail-react.vercel.app",
     credentials: true,
   })
 );
+app.use((req, res, next) => {
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  next();
+});
 //Config view engine
 configViewEngine(app);
 

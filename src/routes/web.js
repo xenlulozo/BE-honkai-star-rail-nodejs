@@ -6,6 +6,7 @@ let router = express.Router();
 let initWebRoutes = (app) => {
   router.get("/info/:id", async (req, res) => {
     const { id } = req.params;
+
     const [row, fields] = await pool.execute(
       `SELECT JSON_OBJECT( 'id', c.id,'name', c.name, 'rarity', c.rarity, 'element', c.element,'path', c.path, 'skills', CONCAT('[', GROUP_CONCAT( JSON_OBJECT( 'skillId', s.skillId, 'name', s.name, 'type', s.type, 'desc', s.description, 'tags', s.tags ) SEPARATOR ','), ']' ), 'energyUltimate', c.energyUltimate ) AS json_data FROM \`character\` c JOIN skill s ON c.id = s.characterId WHERE c.id = ${id} GROUP BY c.id;`
     );
